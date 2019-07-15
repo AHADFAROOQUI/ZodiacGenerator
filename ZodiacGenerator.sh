@@ -57,7 +57,7 @@ pisces=("`echo ${february[@]} | cut -d ' ' -f 19-28`" "`echo ${march[@]} | cut -
 
 case $month in
     "1")
-	if echo "${aquarius[0]}" | grep -q "$day"
+	if echo "${aquarius[0]}" | grep -q "$day" || echo "${capricorn[1]}" | grep -q "$day"
 	then
 	    echo january
 	else
