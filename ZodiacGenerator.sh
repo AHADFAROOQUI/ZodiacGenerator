@@ -57,11 +57,99 @@ pisces=("`echo ${february[@]} | cut -d ' ' -f 19-28`" "`echo ${march[@]} | cut -
 
 case $month in
     "1")
-	if echo "${aquarius[0]}" | grep -q "$day" || echo "${capricorn[1]}" | grep -q "$day"
+	if echo "${aquarius[0]}" | grep -qw "$day"
 	then
-	    echo january
+	    echo "Aquarius"
 	else
-	    echo "${aquarius[0]}"
+	    echo "Capricorn"
 	fi
+        ;;
+    "2")
+        if echo "${pisces[0]}" | grep -qw "$day"
+        then
+            echo "Pisces"
+        else
+            echo "Aquarius"
+        fi
+        ;;
+    "3")
+        if echo "${aries[0]}" | grep -qw "$day"
+        then
+            echo "Aries"
+        else
+            echo "Pisces"
+        fi
+        ;;
+    "4")
+        if echo "${taurus[0]}" | grep -qw "$day"
+        then
+            echo "Taurus"
+        else
+            echo "Aries"
+        fi
+        ;;
+    "5")
+        if echo "${gemini[0]}" | grep -qw "$day"
+        then
+            echo "Gemini"
+        else
+            echo "Taurus"
+        fi
+        ;;
+    "6")
+        if echo "${cancer[0]}" | grep -qw "$day"
+        then
+            echo "Cancer"
+        else
+            echo "Gemini"
+        fi
+        ;;
+    "7")
+        if echo "${leo[0]}" | grep -qw "$day"
+        then
+            echo "Leo"
+        else
+            echo "Cancer"
+        fi
+        ;;
+    "8")
+        if echo "${virgo[0]}" | grep -qw "$day"
+        then
+            echo "Virgo"
+        else
+            echo "Leo"
+        fi
+        ;;
+    "9")
+        if echo "${libra[0]}" | grep -qw "$day"
+        then
+            echo "Libra"
+        else
+            echo "Virgo"
+        fi
+        ;;
+    "10")
+        if echo "${scorpio[0]}" | grep -qw "$day"
+        then
+            echo "Scorpio"
+        else
+            echo "Libra"
+        fi
+        ;;
+    "11")
+        if echo "${sagittarius[0]}" | grep -qw "$day"
+        then
+            echo "Sagittarius"
+        else
+            echo "Scorpio"
+        fi
+        ;;
+    "12")
+        if echo "${capricorn[0]}" | grep -qw "$day"
+        then
+            echo "Capricorn"
+        else
+            echo "Sagittarius"
+        fi
         ;;
 esac
