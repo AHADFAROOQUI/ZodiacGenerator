@@ -1,20 +1,6 @@
 #!/bin/bash
 
 
-#check year
-#check month
-#check days
-#see if year is leap year. if it is then use february variable with extra day (29th)
-#check month
-#check what interval of the month the day is a part of to determine what zodiac sign
-#input --> 1 23 1975
-#output --> Aquarius
-
-read -p "Enter Birthday as shown --> 1 23 1857: " bday
-month=`echo $bday | cut -d ' ' -f 1`
-day=`echo $bday | cut -d ' ' -f 2`
-year=`echo $bday | cut -d ' ' -f 3`
-
 #function ifleapyear {
 #    modulus=$(( $1 % 4 ))
 #    echo $modulus #This will echo 1
@@ -55,8 +41,13 @@ capricorn=("`echo ${december[@]} | cut -d ' ' -f 22-31`" "`echo ${january[@]} | 
 aquarius=("`echo ${january[@]} | cut -d ' ' -f 20-31`" "`echo ${february[@]} | cut -d ' ' -f 1-18`")
 pisces=("`echo ${february[@]} | cut -d ' ' -f 19-28`" "`echo ${march[@]} | cut -d ' ' -f 1-20`")
 
+read -p "Enter Birthday as shown --> 1 23 1857 OR January 23 1857: " bday
+month=`echo $bday | cut -d ' ' -f 1`
+day=`echo $bday | cut -d ' ' -f 2`
+year=`echo $bday | cut -d ' ' -f 3`
+
 case $month in
-    "1")
+    "1" | "January" | "january")
 	if echo "${aquarius[0]}" | grep -qw "$day"
 	then
 	    echo "Aquarius"
@@ -64,7 +55,7 @@ case $month in
 	    echo "Capricorn"
 	fi
         ;;
-    "2")
+    "2" | "February" | "february")
         if echo "${pisces[0]}" | grep -qw "$day"
         then
             echo "Pisces"
@@ -72,7 +63,7 @@ case $month in
             echo "Aquarius"
         fi
         ;;
-    "3")
+    "3" | "March" | "march")
         if echo "${aries[0]}" | grep -qw "$day"
         then
             echo "Aries"
@@ -80,7 +71,7 @@ case $month in
             echo "Pisces"
         fi
         ;;
-    "4")
+    "4" | "April" | "april")
         if echo "${taurus[0]}" | grep -qw "$day"
         then
             echo "Taurus"
@@ -88,7 +79,7 @@ case $month in
             echo "Aries"
         fi
         ;;
-    "5")
+    "5" | "May" | "may")
         if echo "${gemini[0]}" | grep -qw "$day"
         then
             echo "Gemini"
@@ -96,7 +87,7 @@ case $month in
             echo "Taurus"
         fi
         ;;
-    "6")
+    "6" | "June" | "june")
         if echo "${cancer[0]}" | grep -qw "$day"
         then
             echo "Cancer"
@@ -104,7 +95,7 @@ case $month in
             echo "Gemini"
         fi
         ;;
-    "7")
+    "7" | "July" | "july")
         if echo "${leo[0]}" | grep -qw "$day"
         then
             echo "Leo"
@@ -112,7 +103,7 @@ case $month in
             echo "Cancer"
         fi
         ;;
-    "8")
+    "8" | "August" | "august")
         if echo "${virgo[0]}" | grep -qw "$day"
         then
             echo "Virgo"
@@ -120,7 +111,7 @@ case $month in
             echo "Leo"
         fi
         ;;
-    "9")
+    "9" | "September" | "september")
         if echo "${libra[0]}" | grep -qw "$day"
         then
             echo "Libra"
@@ -128,7 +119,7 @@ case $month in
             echo "Virgo"
         fi
         ;;
-    "10")
+    "10" | "October" | "october")
         if echo "${scorpio[0]}" | grep -qw "$day"
         then
             echo "Scorpio"
@@ -136,7 +127,7 @@ case $month in
             echo "Libra"
         fi
         ;;
-    "11")
+    "11" | "November" | "november")
         if echo "${sagittarius[0]}" | grep -qw "$day"
         then
             echo "Sagittarius"
@@ -144,7 +135,7 @@ case $month in
             echo "Scorpio"
         fi
         ;;
-    "12")
+    "12" | "December" | "december")
         if echo "${capricorn[0]}" | grep -qw "$day"
         then
             echo "Capricorn"
