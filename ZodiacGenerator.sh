@@ -45,6 +45,7 @@ read -p "Enter Birthday as shown --> 1 23 1857 OR January 23 1857: " bday
 month=`echo $bday | cut -d ' ' -f 1`
 day=`echo $bday | cut -d ' ' -f 2`
 year=`echo $bday | cut -d ' ' -f 3`
+output="0"
 
 case $month in
     "1" | "January" | "january")
