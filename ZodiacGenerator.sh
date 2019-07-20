@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+#Add Cusps and meanings to Zodoiac signs
+#If user was born on a cusp then notify them
+
+
 #function ifleapyear {
 #    modulus=$(( $1 % 4 ))
 #    echo $modulus #This will echo 1
@@ -41,7 +45,7 @@ capricorn=("`echo ${december[@]} | cut -d ' ' -f 22-31`" "`echo ${january[@]} | 
 aquarius=("`echo ${january[@]} | cut -d ' ' -f 20-31`" "`echo ${february[@]} | cut -d ' ' -f 1-18`")
 pisces=("`echo ${february[@]} | cut -d ' ' -f 19-28`" "`echo ${march[@]} | cut -d ' ' -f 1-20`")
 
-read -p "Enter Birthday as shown --> 1 23 1857 OR January 23 1857: " bday
+read -p "Enter Birthday as shown --> MONTH DAY YEAR: " bday
 month=`echo $bday | cut -d ' ' -f 1`
 day=`echo $bday | cut -d ' ' -f 2`
 year=`echo $bday | cut -d ' ' -f 3`
