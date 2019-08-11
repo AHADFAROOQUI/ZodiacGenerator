@@ -45,6 +45,8 @@ capricorn=("`echo ${december[@]} | cut -d ' ' -f 22-31`" "`echo ${january[@]} | 
 aquarius=("`echo ${january[@]} | cut -d ' ' -f 20-31`" "`echo ${february[@]} | cut -d ' ' -f 1-18`")
 pisces=("`echo ${february[@]} | cut -d ' ' -f 19-28`" "`echo ${march[@]} | cut -d ' ' -f 1-20`")
 
+while [ 1 ]
+do
 read -p "Enter Birthday as shown --> MONTH DAY YEAR: " bday
 month=`echo $bday | cut -d ' ' -f 1`
 day=`echo $bday | cut -d ' ' -f 2`
@@ -149,3 +151,4 @@ case $month in
         fi
         ;;
 esac
+done
